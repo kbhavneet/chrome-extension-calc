@@ -1,0 +1,110 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #121212;
+  font-family: "Arial", sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#display {
+  width: calc(100% - 20px); /* adjusted width to fit container */
+  height: 70px; /* taller display for better readability */
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: right;
+  color: #ffffff;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #333333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #444444;
+}
+
+button:active {
+  transform: scale(0.98); /* Subtle click effect */
+}
+
+.equals {
+  grid-column: span 1;
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.equals:hover {
+  background-color: #0056b3;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+button[data-value="/"],
+button[data-value="*"],
+button[data-value="-"],
+button[data-value="+"] {
+  background-color: #444444;
+  color: #007bff;
+  font-size: 32px;
+}
+
+button[data-value="-"] {
+  font-size: 50px;
+}
+
+button[data-value="*"] {
+  line-height: 1;
+  padding-top: 25px;
+  font-size: 50px;
+}
+
+button[data-value="/"]:hover,
+button[data-value="*"]:hover,
+button[data-value="-"]:hover,
+button[data-value="+"]:hover {
+  background-color: #555555;
+}
+
+button[data-value="C"] {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+
+button[data-value="C"]:hover {
+  background-color: #cc0000;
+}
